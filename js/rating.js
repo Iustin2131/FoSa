@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     closeButton.addEventListener('click', function() {
-        popup.style.display = 'none'; // Hide the popup
+        popup.style.display = 'none';
     });
 
     window.addEventListener('click', function(event) {
@@ -41,17 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
+                if (data.success) {
+                    const averageRating = data.averageRating;
+                    const shoeId = shoeIdInput.value;
+                    const ratingContainer = document.querySelector(`.rating-button[data-shoe-id="${shoeId}"]`).closest('.rating-container');
+                    const scoreElement = ratingContainer.querySelector('.score');
+                    scoreElement.textContent = `${averageRating}/10`;
 
-                const averageRating = data.averageRating;
-                const shoeId = shoeIdInput.value;
-                const ratingContainer = document.querySelector(`.rating-button[data-shoe-id="${shoeId}"]`).closest('.rating-container');
-                const scoreElement = ratingContainer.querySelector('.score');
-                scoreElement.textContent = `${averageRating}/10`;
-                
-                popup.style.display = 'none';
+                    popup.style.display = 'none';
+                } else {
+                    console.error('Error:', data.message);
+                }
             })
             .catch(error => {
-                console.error('Error:', error);
+                console.error('Fetch error:', error);
             });
         });
     });

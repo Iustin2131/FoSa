@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 require_once "database.php";
 
 $shoeId = $_POST['shoe_id'];
@@ -15,9 +15,9 @@ if ($rating) {
         die("Error updating rating: " . mysqli_error($connection));
     }
 } else {
-    $sqlInsertRating = "INSERT INTO ratings (id_shoes, id_user, rating, love) VALUES ('".$shoeId."', '".$userId."', 0, '".$love."')";
+    $sqlInsertRating = "INSERT INTO ratings (id_shoes, id_user, rating, love, numberofnotes) VALUES ('".$shoeId."', '".$userId."', 0.0, '".$love.", 0')";
     if (!mysqli_query($connection, $sqlInsertRating)) {
         die("Error insert rating: " . mysqli_error($connection));
     }
 }
-?>
+?> -->
