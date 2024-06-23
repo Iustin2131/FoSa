@@ -1,0 +1,551 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    background: #F6F3E4;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    top: 0;
+}
+
+.navbar a img {
+    width: 80px;
+    margin-left: 2vw;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+}
+
+.nav-links li:hover a {
+    color: #E2BA07;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+#sign-in {
+    width: 110px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    background-color: #E2BA07;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#sign-in:hover {
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 850px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 100%;
+        background: #E2BA07;
+        z-index: 1000;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-btn {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 45px;
+        cursor: pointer;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+}
+
+
+@media only screen and (min-width: 851px) {
+    .menu-btn {
+        display: none;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 150px 0 100px 0;
+    width: 100%;
+}
+
+.container-2 {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.element {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #F9F7EC;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    align-items: center;
+    padding: 30px;
+}
+
+.element>img {
+    width: 200px;
+    border-radius: 20px;
+    margin: 25px 0 25px 0;
+}
+
+.info {
+    width: 70%;
+}
+
+.info-price {
+    font-weight: 600;
+}
+
+.info button {
+    width: 100px;
+    height: 40px;
+    background-color: #E2BA07;
+    border: none;
+    border-radius: 10px;
+}
+
+.star {
+    width: 25px;
+}
+
+.like {
+    float: right;
+    width: 30px;
+    cursor: pointer;
+}
+
+.container-3 {
+    margin: 5px 100px 0 100px;
+    width: 180px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.ico-container {
+    margin: 5px 100px 10px 100px;
+}
+
+.ico {
+    width: 30px;
+    margin: 0 20px 0 20px;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 200px;
+    background-color: #F6F3E4;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-1 {
+    width: 20%;
+    height: 1800px;
+}
+
+.side-bar {
+    width: 100%;
+    height: 100%;
+    background-color: #F9F7EC;
+    border-radius: 10px;
+    padding-top: 20px;
+}
+
+.side-bar p
+{
+    display: block;
+    margin: 10px 0 20px 0;
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    background-color: #000;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.side-bar button, .side-bar input[type="button"]
+{
+    display: block;
+    margin: 10px auto 20px auto;
+    padding: 10px 20px 10px 20px;
+    width: 120px;
+    background-color: #FF9900;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.categories input[type="checkbox"], .brands input[type="checkbox"], .sizes input[type="checkbox"]
+{
+    display: none;
+}
+
+.categories label, .brands label, .sizes label
+{
+    text-align: center;
+    display: block;
+    width: 100px;
+    border: solid 2px #000;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.brand>form, .color-form>form
+{
+    margin: 0 0 20px 50px;
+}
+
+[type="button"] {
+    background-color: transparent;
+    border: solid 2px #000;
+    border-radius: 20px;
+    width: 80%;
+    /*height: 30px;*/
+    cursor: pointer;
+}
+
+[type="button"]:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+[type="range"]
+{
+    -webkit-appearance: none;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.drop
+{
+    display: none;
+}
+
+.color-form input[type="checkbox"]
+{
+    display: none;
+}
+
+.color-form img
+{
+    width: 20px;
+    margin-right: 5px;
+}
+
+.color-form label
+{
+    cursor: pointer;
+}
+
+.color
+{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 60px;
+}
+
+.container-2 {
+    position: relative;
+}
+
+.element {
+    position: relative;
+}
+
+.info-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.rating-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    bottom: 30px;
+}
+
+.rating
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.score {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.rating-button {
+    padding: 5px 10px;
+    background-color: #E2BA07;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.rating-button:hover {
+    background-color: black;
+}
+
+.info-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-bottom>button, .rating-button {
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+}
+
+.buttons-size button {
+    width: 60px;
+}
+
+.size-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 5px;
+    padding: 5px 10px;
+}
+
+.popup {
+    display: none;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.rating-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.rate-button {
+    background-color: #E2BA07;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+.rate-button:hover {
+    background-color: #FFD700;
+}
+
+.filter, .category, .brand, .color-form, .size, .price
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.category, .brand, .color-form, .size, .price
+{
+    width: 80%;
+}
+
+
+@media only screen and (max-width: 1150px)
+{
+    .info-descript
+    {
+        font-size: 12px;
+    }
+
+    .info
+    {
+        width: 50%;
+    }
+
+    .drop
+    {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+    .drop {
+        display: block;
+    }
+
+    .container-2 {
+        margin: auto;
+        width: 90%;
+    }
+
+    .element>img {
+        width: 150px;
+    }
+
+    .info {
+        width: 60%;
+    }
+
+    .info button {
+        width: 80px;
+        height: 30px;
+    }
+
+    main {
+        display: block
+    }
+
+    .container-1 {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .dropdown-content {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .element{
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .element>img {
+        width: 200px;
+    }
+
+    .info {
+        width: 80%;
+    }
+
+    .info button {
+        width: 100px;
+        height: 40px;
+    }
+
+    .ico {
+        width: 20px;
+        margin: 0 10px 0 10px;
+    }
+}
