@@ -1,5 +1,5 @@
 {
-    "name": "my-php-app",
+    "name": "iustin/fosa",
     "description": "A simple PHP app",
     "require": {}
   }
